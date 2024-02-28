@@ -1,7 +1,8 @@
 package com.Spring.LibraryService.Controller;
-
-import com.Spring.LibraryService.Service.MemberService;
+import com.Spring.LibraryService.entity.LibraryMember;
+//import com.Spring.Model.Member;
 import com.Spring.LibraryService.Model.Member;
+import com.Spring.LibraryService.Service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,25 +12,26 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
-    @GetMapping("/{memberId}")
-    public Member getMember(@PathVariable Long memberId){
+    @GetMapping
+    public Member getMember(Integer memberId){
+
         return memberService.getMember(memberId);
     }
 
     // create a member
     @PostMapping
-    public Member createMember(@RequestBody  Member member){
+    public LibraryMember createMember(@RequestBody  LibraryMember member){
         return memberService.createMember(member);
     }
 
-    @PutMapping("/{memberId}")
-    public Member updateMember(@PathVariable Long memberId,@RequestBody Member member){
-        return memberService.updateMember(memberId,member);
+    @PutMapping
+    public LibraryMember updateMember(@RequestBody LibraryMember LibraryMember){
+        // Set the memberId for the member object to be updated
+        return memberService.updateMember(LibraryMember);
     }
-    @DeleteMapping("/{memberId}")
-    public void deleteMember(@PathVariable Long memberId){
+
+    @DeleteMapping
+    public void deleteMember(Integer memberId){
         memberService.deleteMember(memberId);
     }
-
-
 }
