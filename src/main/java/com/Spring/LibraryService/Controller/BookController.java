@@ -1,5 +1,4 @@
 package com.Spring.LibraryService.Controller;
-
 import com.Spring.LibraryService.entity.LibraryBook;
 //import com.Spring.LibraryService.model.Book;
 import com.Spring.LibraryService.Model.Book;
@@ -21,14 +20,14 @@ public class BookController {
 
     // create a book
     @PostMapping
-    public LibraryBook createBook(@RequestBody LibraryBook book){
+    public Book createBook(@RequestBody Book book){
         return bookService.createBook(book);
     }
 
     @PutMapping
-    public LibraryBook updateBook(@RequestBody LibraryBook LibraryBook){
+    public Book updateBook(@RequestBody Book book){
         // Set the memberId for the member object to be updated
-        return bookService.updateBook(LibraryBook);
+        return bookService.updateBook(book);
     }
 
     @DeleteMapping

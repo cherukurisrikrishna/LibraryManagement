@@ -5,6 +5,11 @@ import lombok.Data;
 
 import java.util.Date;
 
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.util.Date;
+
 @Table(name="checkout")
 @Entity
 @Data

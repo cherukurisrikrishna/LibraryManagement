@@ -5,6 +5,11 @@ import lombok.Data;
 
 import java.util.List;
 
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.util.List;
+
 @Table(name= "book_isbn")
 @Entity
 @Data

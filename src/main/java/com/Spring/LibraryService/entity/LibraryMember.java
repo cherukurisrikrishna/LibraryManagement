@@ -1,7 +1,7 @@
 package com.Spring.LibraryService.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
 
 import java.util.List;
 
@@ -36,7 +36,7 @@ public class LibraryMember {
     @JoinColumn(name="address_id")
     private Address address;
 
-    @OneToMany(mappedBy = "libraryMember")
+    @OneToMany(mappedBy = "libraryMember", cascade = CascadeType.ALL)
     private List<Checkout> checkouts;
 
     // lombok
